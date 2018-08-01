@@ -25,7 +25,7 @@ object JDBCWirteMysql {
     val properties = new Properties()
     properties.put("user", "root")
     properties.put("password", "root")
-    personDF.write.jdbc("jdbc:mysql://192.168.25.185/bigdata", "person", properties)
+    personDF.write.mode("append").jdbc("jdbc:mysql://192.168.25.185/bigdata", "person", properties)
     //写文件到json
     personDF.write.json("C:\\Users\\10713\\Desktop\\output2")
   }
